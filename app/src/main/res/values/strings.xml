@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ProyectoSeguros</string>
+    <string name="title_activity_lista_usuarios">ListaUsuarios</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="cedula">Cedula</string>
+    <string name="telefono">Telefono</string>
+    <string name="direccion">Direccion</string>
+    <string name="agregar">Agregar</string>
+
+    <string name="usuarios">Crear usuario</string>
+    <string name="poliza">Crear poliza</string>
+    <string name="sexo">Sexo</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="guardado">Guardado exitosamente</string>
+    <string name="numero_poliza">Numero de la poliza</string>
+    <string name="numero_placa">Numero de placa</string>
+    <string name="fechai">Fecha de inicio</string>
+    <string name="fechaf">Fecha final</string>
+    <string name="nombreAsesor">Nombre del asesor</string>
+
+    <string-array name="op_lista_principal">
+        <item>@string/usuarios</item>
+        <item>@string/poliza</item>
+
+    </string-array>
+    <string-array name="op_lista_sexo">
+        <item>@string/hombre</item>
+        <item>@string/mujer</item>
+    </string-array>
+</resources>
