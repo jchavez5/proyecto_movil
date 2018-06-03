@@ -22,11 +22,15 @@
 
     <string-array name="op_lista_principal">
         <item>@string/usuarios</item>
-        <item>@string/poliza</item>
+        <item>@string/lista_usuario</item>
 
     </string-array>
     <string-array name="op_lista_sexo">
         <item>@string/hombre</item>
         <item>@string/mujer</item>
     </string-array>
+    <string name="title_activity_lista_persona">ListaPersona</string>
+    <string name="id_persona">ID_persona</string>
+    <string name="nombre_poliza">Nombre persona</string>
+    <string name="lista_usuario">Lista de usuarios</string>
 </resources>

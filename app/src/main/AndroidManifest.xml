@@ -21,7 +21,7 @@
             android:label="@string/title_activity_lista_usuarios"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CrearPersona" />
-        <activity android:name=".CrearPoliza"></activity>
+        <activity android:name=".CrearPoliza" />
     </application>
 
 </manifest>

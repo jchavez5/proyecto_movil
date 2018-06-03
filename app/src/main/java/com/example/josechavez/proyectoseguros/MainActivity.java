@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(in_principal);
                         break;
                     case 1:
-                        in_principal= new Intent(MainActivity.this,CrearPoliza.class);
+                        in_principal= new Intent(MainActivity.this,ListaUsuarios.class);
                         startActivity(in_principal);
                         break;
 

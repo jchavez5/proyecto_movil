@@ -23,7 +23,7 @@ public class CrearPersona extends AppCompatActivity {
         txtCedula=findViewById(R.id.txtCedula);
         txtCelular=findViewById(R.id.txtCelular);
         txtDireccion=findViewById(R.id.txtDireccion);
-        //Spinner de Marcas
+        //Spinner de Sexo
         spn_sexo = findViewById(R.id.sp_sexo);
         opc_sexo = this.getResources().getStringArray(R.array.op_lista_sexo);
         adp_sexo = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,opc_sexo);

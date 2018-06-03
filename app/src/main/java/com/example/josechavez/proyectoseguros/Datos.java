@@ -1,5 +1,6 @@
 package com.example.josechavez.proyectoseguros;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -37,6 +38,8 @@ public class Datos {
    public static void modificarPersona(Persona p) {
        databaseReference.child(db).child(p.getId()).setValue(p);
    }
+
+
 //polizas
     public static void guardarPoliza(Poliza poliza) {
         databaseReference.child(db_poliza).child(poliza.getId()).setValue(poliza);
