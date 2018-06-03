@@ -18,18 +18,18 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona.OnPersonaClickListener{
+public class ConsultarPolizas extends AppCompatActivity implements AdaptadorConsulta.OnConsultaClickListener{
     private RecyclerView ListaPersona;
     private ArrayList<Persona> personas;
     private Intent i;
     private LinearLayoutManager llm;
-    private AdaptadorPersona adapter;
+    private AdaptadorConsulta adapter;
     private static String db = "persona";
     private DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_usuarios);
+        setContentView(R.layout.activity_consultar_polizas);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ListaPersona=findViewById(R.id.listaPersona);
@@ -37,7 +37,7 @@ public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona
 
         llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        adapter = new AdaptadorPersona(personas,this);
+        adapter = new AdaptadorConsulta(personas,this);
 
         ListaPersona.setLayoutManager(llm);
         ListaPersona.setAdapter(adapter);
@@ -75,8 +75,8 @@ public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona
     }
 
     @Override
-    public void onPersonaClick(Persona p) {
-        Intent i = new Intent(ListaUsuarios.this,CrearPoliza.class);
+    public void onConsultaClick(Persona p) {
+       // Intent i = new Intent(ConsultarPolizas.this,ConsultarPolizaXPersona.class);
         Bundle b = new Bundle();
         b.putString("id",p.getId());
 

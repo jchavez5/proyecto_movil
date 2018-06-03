@@ -22,6 +22,14 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CrearPersona" />
         <activity android:name=".CrearPoliza" />
+        <activity
+            android:name=".ConsultarPolizas"
+            android:label="@string/title_activity_consultar_polizas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ListaPoliza"
+            android:label="@string/title_activity_lista_poliza"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -18,43 +18,44 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona.OnPersonaClickListener{
-    private RecyclerView ListaPersona;
-    private ArrayList<Persona> personas;
+public class ListaPoliza extends AppCompatActivity implements AdaptadorPoliza.OnPolizaClickListener {
+    private RecyclerView ListaPoliza;
+    private ArrayList<Poliza> polizas;
     private Intent i;
     private LinearLayoutManager llm;
-    private AdaptadorPersona adapter;
-    private static String db = "persona";
+    private AdaptadorPoliza adapter;
+    private static String db_poliza = "poliza";
     private DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_usuarios);
+        setContentView(R.layout.activity_lista_poliza);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ListaPersona=findViewById(R.id.listaPersona);
-        personas=new ArrayList<>();
+
+        ListaPoliza=findViewById(R.id.ListaPoliza);
+        polizas=new ArrayList<>();
 
         llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        adapter = new AdaptadorPersona(personas,this);
+        adapter = new AdaptadorPoliza(polizas,this);
 
-        ListaPersona.setLayoutManager(llm);
-        ListaPersona.setAdapter(adapter);
+        ListaPoliza.setLayoutManager(llm);
+        ListaPoliza.setAdapter(adapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.child(db).addValueEventListener(new ValueEventListener() {
+        databaseReference.child(db_poliza).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                personas.clear();
+                polizas.clear();
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        Persona p = snapshot.getValue(Persona.class);
-                        personas.add(p);
+                        Poliza p = snapshot.getValue(Poliza.class);
+                        polizas.add(p);
                     }
                 }
                 adapter.notifyDataSetChanged();
-                Datos.setPersonas(personas);
+                Datos.setPoliza(polizas);
             }
 
             @Override
@@ -62,6 +63,7 @@ public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona
 
             }
         });
+
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -74,16 +76,9 @@ public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona
         });
     }
 
+
     @Override
-    public void onPersonaClick(Persona p) {
-        Intent i = new Intent(ListaUsuarios.this,CrearPoliza.class);
-        Bundle b = new Bundle();
-        b.putString("id",p.getId());
-
-
-        i.putExtra("datos",b);
-        startActivity(i);
-
+    public void onPolizaClick(Poliza p) {
 
     }
 }

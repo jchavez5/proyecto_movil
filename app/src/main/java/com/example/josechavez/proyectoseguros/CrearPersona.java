@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 public class CrearPersona extends AppCompatActivity {
     private EditText txtNombre,txtApellido,txtCedula,txtCelular,txtDireccion;
     private Spinner spn_sexo;
@@ -46,7 +48,7 @@ public class CrearPersona extends AppCompatActivity {
         celular=Integer.parseInt(txtCelular.getText().toString());
         sexo=obtenerCampo(spn_sexo);
         id=Datos.getId();
-        Persona p = new Persona(id,cedula,nombre,apellido,sexo,celular,direccion);
+        Persona p = new Persona(id,cedula,nombre,apellido,sexo,celular,direccion,new ArrayList<Poliza>());
         p.guardar();
         Snackbar.make(view, getResources().getString(R.string.guardado),Snackbar.LENGTH_SHORT).setAction("Action",null).show();
         limpiar();

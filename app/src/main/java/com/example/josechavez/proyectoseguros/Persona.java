@@ -15,6 +15,7 @@ public class Persona {
     private int telefono;
     private String direccion;
 
+
     public Persona() {
     }
 
@@ -87,7 +88,6 @@ public class Persona {
     public void guardar(){
         Datos.guardar(this);
     }
-
     public void eliminar(){
         Datos.eliminarPersona(this);
     }

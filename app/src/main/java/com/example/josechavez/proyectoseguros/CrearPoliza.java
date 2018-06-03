@@ -28,7 +28,7 @@ public class CrearPoliza extends AppCompatActivity {
         txtFechaF=findViewById(R.id.txtFechaF);
         txtNombreAsesor=findViewById(R.id.txtAsesor);
 
-
+        //datos de la persona
         i =getIntent();
         bundle = i.getBundleExtra("datos");
         idPersona=bundle.getString("id");

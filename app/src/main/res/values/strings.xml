@@ -23,6 +23,8 @@
     <string-array name="op_lista_principal">
         <item>@string/usuarios</item>
         <item>@string/lista_usuario</item>
+        <item>@string/consultar</item>
+        <item>@string/consultar_poliza</item>
 
     </string-array>
     <string-array name="op_lista_sexo">
@@ -32,5 +34,11 @@
     <string name="title_activity_lista_persona">ListaPersona</string>
     <string name="id_persona">ID_persona</string>
     <string name="nombre_poliza">Nombre persona</string>
-    <string name="lista_usuario">Lista de usuarios</string>
+    <string name="lista_usuario">Crear poliza por lista de usuarios</string>
+    <string name="title_activity_consultar_polizas">ConsultarPolizas</string>
+    <string name="consultar">Consultar Polizas por usuarios</string>
+    <string name="title_activity_consultar_poliza_persona">ConsultarPolizaPersona</string>
+    <string name="title_activity_consultar_poliza_xpersona">ConsultarPolizaXPersona</string>
+    <string name="consultar_poliza">Ver todas las polizas creadas</string>
+    <string name="title_activity_lista_poliza">ListaPoliza</string>
 </resources>

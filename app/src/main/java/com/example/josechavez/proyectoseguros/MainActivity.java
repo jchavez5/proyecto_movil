@@ -34,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(in_principal);
                         break;
 
+                    case 2:
+                        in_principal= new Intent(MainActivity.this,ConsultarPolizas.class);
+                        startActivity(in_principal);
+                        break;
+                    case 3:
+                        in_principal= new Intent(MainActivity.this,ListaPoliza.class);
+                        startActivity(in_principal);
+                        break;
+
+
+
+
                 }
             }
         });
