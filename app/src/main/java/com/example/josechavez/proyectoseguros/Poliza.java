@@ -13,6 +13,9 @@ public class Poliza {
     private String nombreAsesor;
     private String id_usuario;
 
+    public Poliza() {
+    }
+
     public Poliza(String id, String npoliza, String nplaca, String fechainicio, String fechafinal, String nombreAsesor, String id_usuario) {
         this.id = id;
         this.npoliza = npoliza;

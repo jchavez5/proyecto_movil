@@ -14,6 +14,8 @@ public class Datos {
     private static String db ="persona";
     private static String db_poliza="poliza";
     private static DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+    private static DatabaseReference databaseReference2 = FirebaseDatabase.getInstance().getReference();
+
     private static ArrayList<Persona> personas =new ArrayList<>();
     private static ArrayList<Poliza> polizas =new ArrayList<>();
 
@@ -44,15 +46,15 @@ public class Datos {
 
 
 //polizas
-    public static void guardarPoliza(Poliza poliza) {
-        databaseReference.child(db_poliza).child(poliza.getId()).setValue(poliza);
+    public static void guardarPoliza(Poliza pz) {
+        databaseReference2.child(db_poliza).child(pz.getId()).setValue(pz);
 
     }
     public static ArrayList<Poliza> obtenerPoliza(){
         return polizas;
     }
     public static String getIdPoliza(){
-        return databaseReference.push().getKey();
+        return databaseReference2.push().getKey();
     }
     public static void setPoliza(ArrayList<Poliza> poliza){
         Datos.polizas = poliza;

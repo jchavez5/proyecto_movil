@@ -44,16 +44,19 @@ public class ListaPoliza extends AppCompatActivity implements AdaptadorPoliza.On
         ListaPoliza.setAdapter(adapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
         databaseReference.child(db_poliza).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 polizas.clear();
-                if (dataSnapshot.exists()) {
+                if (dataSnapshot.exists()){
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Poliza p = snapshot.getValue(Poliza.class);
                         polizas.add(p);
                     }
                 }
+
+
                 adapter.notifyDataSetChanged();
                 Datos.setPoliza(polizas);
             }

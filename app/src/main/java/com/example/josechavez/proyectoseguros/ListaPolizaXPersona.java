@@ -17,44 +17,58 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class  ConsultarPolizas extends AppCompatActivity implements AdaptadorConsulta.OnConsultaClickListener{
-    private RecyclerView ListaPersona;
-    private ArrayList<Persona> personas;
+public class ListaPolizaXPersona extends AppCompatActivity implements AdaptadorPolizaPersona.OnPolizaPersonaClickListener {
+    private RecyclerView ListaPolizaPersona;
+    private ArrayList<Poliza> polizas;
     private Intent i;
     private LinearLayoutManager llm;
-    private AdaptadorConsulta adapter;
-    private static String db = "persona";
+    private AdaptadorPolizaPersona adapter;
+    private static String db_poliza = "poliza";
     private DatabaseReference databaseReference;
+    private Bundle bundle;
+    private String id_persona;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consultar_polizas);
+        setContentView(R.layout.activity_lista_poliza_xpersona);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ListaPersona=findViewById(R.id.listaPersona);
-        personas=new ArrayList<>();
+
+        ListaPolizaPersona=findViewById(R.id.ListaPolizaXpersona);
+        polizas=new ArrayList<>();
 
         llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        adapter = new AdaptadorConsulta(personas,this);
+        adapter = new AdaptadorPolizaPersona(polizas,this);
 
-        ListaPersona.setLayoutManager(llm);
-        ListaPersona.setAdapter(adapter);
+        i=getIntent();
+        bundle=i.getBundleExtra("datos");
+        id_persona=bundle.getString("id");
+
+
+        ListaPolizaPersona.setLayoutManager(llm);
+        ListaPolizaPersona.setAdapter(adapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.child(db).addValueEventListener(new ValueEventListener() {
+
+        databaseReference.child(db_poliza).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                personas.clear();
-                if (dataSnapshot.exists()) {
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        Persona p = snapshot.getValue(Persona.class);
-                        personas.add(p);
+                polizas.clear();
+                Iterable<DataSnapshot> snapshotIterable=dataSnapshot.getChildren();
+                Iterator<DataSnapshot> iterator=snapshotIterable.iterator();
+                while (iterator.hasNext()){
+                    DataSnapshot snapshot=iterator.next();
+                    Poliza p = snapshot.getValue(Poliza.class);
+
+                    if (p.getId_usuario().equals(id_persona)){
+                        polizas.add(p);
                     }
                 }
-                adapter.notifyDataSetChanged();
-                Datos.setPersonas(personas);
+               adapter.notifyDataSetChanged();
+                Datos.setPoliza(polizas);
             }
 
             @Override
@@ -62,7 +76,6 @@ public class  ConsultarPolizas extends AppCompatActivity implements AdaptadorCon
 
             }
         });
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -74,16 +87,9 @@ public class  ConsultarPolizas extends AppCompatActivity implements AdaptadorCon
         });
     }
 
+
     @Override
-    public void onConsultaClick(Persona p) {
-        Intent i = new Intent(ConsultarPolizas.this,ListaPolizaXPersona.class);
-        Bundle b = new Bundle();
-        b.putString("id",p.getId());
-
-
-        i.putExtra("datos",b);
-        startActivity(i);
-
+    public void onPolizaPersonaClick(Poliza p) {
 
     }
 }

@@ -29,6 +29,10 @@
         <activity
             android:name=".ListaPoliza"
             android:label="@string/title_activity_lista_poliza"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ListaPolizaXPersona"
+            android:label="@string/title_activity_lista_poliza_xpersona"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

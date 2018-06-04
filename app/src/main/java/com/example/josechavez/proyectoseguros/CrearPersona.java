@@ -48,7 +48,7 @@ public class CrearPersona extends AppCompatActivity {
         celular=Integer.parseInt(txtCelular.getText().toString());
         sexo=obtenerCampo(spn_sexo);
         id=Datos.getId();
-        Persona p = new Persona(id,cedula,nombre,apellido,sexo,celular,direccion,new ArrayList<Poliza>());
+        Persona p = new Persona(id,cedula,nombre,apellido,sexo,celular,direccion);
         p.guardar();
         Snackbar.make(view, getResources().getString(R.string.guardado),Snackbar.LENGTH_SHORT).setAction("Action",null).show();
         limpiar();

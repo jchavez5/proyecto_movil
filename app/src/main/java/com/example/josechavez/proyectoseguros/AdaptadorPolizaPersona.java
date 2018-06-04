@@ -12,24 +12,27 @@ import java.util.ArrayList;
  * Created by Josechavez on 03/06/2018.
  */
 
-public class  AdaptadorPoliza extends RecyclerView.Adapter<AdaptadorPoliza.PolizaViewHolder> {
+public class AdaptadorPolizaPersona extends RecyclerView.Adapter<AdaptadorPolizaPersona.PolizaPersonaViewHolder> {
     private ArrayList<Poliza> polizas;
-    private OnPolizaClickListener clickListener;
-    public AdaptadorPoliza(ArrayList<Poliza> polizas, AdaptadorPoliza.OnPolizaClickListener clickListener) {
+    private OnPolizaPersonaClickListener clickListener;
+
+    public AdaptadorPolizaPersona(ArrayList<Poliza> polizas, AdaptadorPolizaPersona.OnPolizaPersonaClickListener clickListener) {
         this.polizas = polizas;
         this.clickListener = clickListener;
     }
 
 
     @Override
-    public AdaptadorPoliza.PolizaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AdaptadorPolizaPersona.PolizaPersonaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.item_poliza, parent, false);
-        return new AdaptadorPoliza.PolizaViewHolder(v);
+                inflate(R.layout.item_polizaxpersona, parent, false);
+        return new AdaptadorPolizaPersona.PolizaPersonaViewHolder(v);
     }
 
+
+
     @Override
-    public void onBindViewHolder(AdaptadorPoliza.PolizaViewHolder holder, int position) {
+    public void onBindViewHolder(AdaptadorPolizaPersona.PolizaPersonaViewHolder holder, int position) {
         final Poliza p = polizas.get(position);
         holder.npoliza.setText(p.getNplaca());
         holder.nplaca.setText(p.getNplaca());
@@ -38,7 +41,7 @@ public class  AdaptadorPoliza extends RecyclerView.Adapter<AdaptadorPoliza.Poliz
         holder.v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clickListener.onPolizaClick(p);
+                clickListener.onPolizaPersonaClick(p);
             }
         });
     }
@@ -47,23 +50,25 @@ public class  AdaptadorPoliza extends RecyclerView.Adapter<AdaptadorPoliza.Poliz
         return polizas.size();
     }
 
-    public static class PolizaViewHolder extends RecyclerView.ViewHolder{
+    public static class PolizaPersonaViewHolder extends RecyclerView.ViewHolder{
         private TextView npoliza;
         private TextView nplaca;
         private View v;
 
-        public PolizaViewHolder(View itemView){
+        public PolizaPersonaViewHolder(View itemView){
             super(itemView);
             v = itemView;
-            npoliza=v.findViewById(R.id.lblNpoliza);
-            nplaca=v.findViewById(R.id.lblNplaca);
+            npoliza=v.findViewById(R.id.lblNpolizaPersona);
+            nplaca=v.findViewById(R.id.lblNpolizaPersona);
 
 
 
         }
 
     }
-    public interface OnPolizaClickListener{
-        void onPolizaClick(Poliza p);
+    public interface OnPolizaPersonaClickListener{
+        void onPolizaPersonaClick(Poliza p);
     }
+
+
 }
