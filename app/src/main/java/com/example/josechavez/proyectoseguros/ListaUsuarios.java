@@ -79,6 +79,9 @@ public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona
         Intent i = new Intent(ListaUsuarios.this,CrearPoliza.class);
         Bundle b = new Bundle();
         b.putString("id",p.getId());
+        b.putString("nombre",p.getNombre());
+        b.putString("cedula",p.getCedula());
+
 
 
         i.putExtra("datos",b);

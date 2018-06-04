@@ -71,7 +71,7 @@ public class CrearPersona extends AppCompatActivity {
 
     public void guardar(View view){
         if (validacion(new EditText[]{txtNombre,txtApellido,txtCedula,txtCelular,txtDireccion},getResources().getString(R.string.error))){
-            String nombre,apellido,id,cedula,direccion,sexo;
+            String nombre,apellido,id,direccion,cedula,sexo;
             int celular,foto;
 
             nombre=txtNombre.getText().toString();

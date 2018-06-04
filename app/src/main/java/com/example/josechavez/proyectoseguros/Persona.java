@@ -16,6 +16,10 @@ public class Persona {
     private String direccion;
     private int foto;
 
+
+    public Persona() {
+    }
+
     public Persona(String id, String cedula, String nombre, String apellido, String sexo, int telefono, String direccion, int foto) {
         this.id = id;
         this.cedula = cedula;
@@ -27,10 +31,13 @@ public class Persona {
         this.foto = foto;
     }
 
-    public Persona() {
+    public String getCedula() {
+        return cedula;
     }
 
-
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
 
     public String getId() {
         return id;
@@ -40,13 +47,6 @@ public class Persona {
         this.id = id;
     }
 
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
 
     public String getNombre() {
         return nombre;

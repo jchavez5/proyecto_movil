@@ -33,8 +33,9 @@ public AdaptadorPersona(ArrayList<Persona> personas, OnPersonaClickListener clic
     public void onBindViewHolder(PersonaViewHolder holder, int position) {
         final Persona p = personas.get(position);
         holder.nombre.setText(p.getNombre());
-        holder.apeliido.setText(p.getApellido());
+        holder.apellido.setText(p.getApellido());
         holder.foto.setImageResource(p.getFoto());
+        holder.cedula.setText(p.getCedula());
 
 
         holder.v.setOnClickListener(new View.OnClickListener() {
@@ -51,8 +52,7 @@ public AdaptadorPersona(ArrayList<Persona> personas, OnPersonaClickListener clic
 
     public static class PersonaViewHolder extends RecyclerView.ViewHolder{
         private ImageView foto;
-        private TextView nombre;
-        private TextView apeliido;
+        private TextView nombre,apellido,cedula;
         private View v;
 
         public PersonaViewHolder(View itemView){
@@ -60,7 +60,9 @@ public AdaptadorPersona(ArrayList<Persona> personas, OnPersonaClickListener clic
             v = itemView;
             foto = v.findViewById(R.id.imgFoto);
             nombre=v.findViewById(R.id.lblNombre);
-            apeliido=v.findViewById(R.id.lblApellido);
+            apellido=v.findViewById(R.id.lblApellido);
+            cedula=v.findViewById(R.id.lblCedula);
+
 
 
 

@@ -6,17 +6,18 @@ package com.example.josechavez.proyectoseguros;
 
 public class Poliza {
     private String id;
-    private String npoliza;
+    private int npoliza;
     private String nplaca;
     private String fechainicio;
     private String fechafinal;
     private String nombreAsesor;
     private String id_usuario;
+    private int valor_poliza;
 
     public Poliza() {
     }
 
-    public Poliza(String id, String npoliza, String nplaca, String fechainicio, String fechafinal, String nombreAsesor, String id_usuario) {
+    public Poliza(String id, int npoliza, String nplaca, String fechainicio, String fechafinal, String nombreAsesor, String id_usuario, int valor_poliza) {
         this.id = id;
         this.npoliza = npoliza;
         this.nplaca = nplaca;
@@ -24,6 +25,23 @@ public class Poliza {
         this.fechafinal = fechafinal;
         this.nombreAsesor = nombreAsesor;
         this.id_usuario = id_usuario;
+        this.valor_poliza = valor_poliza;
+    }
+
+    public int getNpoliza() {
+        return npoliza;
+    }
+
+    public void setNpoliza(int npoliza) {
+        this.npoliza = npoliza;
+    }
+
+    public int getValor_poliza() {
+        return valor_poliza;
+    }
+
+    public void setValor_poliza(int valor_poliza) {
+        this.valor_poliza = valor_poliza;
     }
 
     public String getId() {
@@ -34,13 +52,6 @@ public class Poliza {
         this.id = id;
     }
 
-    public String getNpoliza() {
-        return npoliza;
-    }
-
-    public void setNpoliza(String npoliza) {
-        this.npoliza = npoliza;
-    }
 
     public String getNplaca() {
         return nplaca;

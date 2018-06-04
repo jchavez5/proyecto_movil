@@ -81,6 +81,7 @@ public class  ConsultarPolizas extends AppCompatActivity implements AdaptadorCon
         b.putString("id",p.getId());
 
 
+
         i.putExtra("datos",b);
         startActivity(i);
 
