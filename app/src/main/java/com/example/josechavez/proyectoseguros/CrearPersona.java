@@ -6,15 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class CrearPersona extends AppCompatActivity {
     private EditText txtNombre,txtApellido,txtCedula,txtCelular,txtDireccion;
-    private Spinner spn_sexo;
-    private String [] opc_sexo;
-    private ArrayAdapter<String> adp_sexo;
+    private RadioButton txtHombre,txtMujer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,33 +26,51 @@ public class CrearPersona extends AppCompatActivity {
         txtCedula=findViewById(R.id.txtCedula);
         txtCelular=findViewById(R.id.txtCelular);
         txtDireccion=findViewById(R.id.txtDireccion);
-        //Spinner de Sexo
-        spn_sexo = findViewById(R.id.sp_sexo);
-        opc_sexo = this.getResources().getStringArray(R.array.op_lista_sexo);
-        adp_sexo = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,opc_sexo);
-        spn_sexo.setAdapter(adp_sexo);
+        txtHombre=findViewById(R.id.hombre);
+        txtMujer=findViewById(R.id.mujer);
+
+
     }
 
-    public String obtenerCampo(Spinner spinner){
+    public String obtenerSexo(RadioButton hombre,RadioButton mujer){
         String cadena="";
-        cadena=spinner.getSelectedItem().toString();
-        //Toast.makeText(this,cadena,Toast.LENGTH_LONG).show();
-        return  cadena;
+        if (txtHombre.isChecked()){
+            cadena=hombre.getText().toString();
+        }
+        if (txtMujer.isChecked()){
+            cadena=mujer.getText().toString();
+        }
+        return cadena;
     }
+    public boolean  validacion(EditText[] editTexts,String error){
+        for (int i = 0; i < editTexts.length; i++) {
+            if (editTexts[i].getText().toString().equals("")){
+                Toast.makeText(this,""+error,Toast.LENGTH_LONG).show();
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void guardar(View view){
-        String nombre,apellido,id,cedula,direccion,sexo;
-        int celular;
-        nombre=txtNombre.getText().toString();
-        apellido=txtApellido.getText().toString();
-        cedula=txtCedula.getText().toString();
-        direccion=txtDireccion.getText().toString();
-        celular=Integer.parseInt(txtCelular.getText().toString());
-        sexo=obtenerCampo(spn_sexo);
-        id=Datos.getId();
-        Persona p = new Persona(id,cedula,nombre,apellido,sexo,celular,direccion);
-        p.guardar();
-        Snackbar.make(view, getResources().getString(R.string.guardado),Snackbar.LENGTH_SHORT).setAction("Action",null).show();
-        limpiar();
+        if (validacion(new EditText[]{txtNombre,txtApellido,txtCedula,txtCelular,txtDireccion},getResources().getString(R.string.error))){
+            String nombre,apellido,id,cedula,direccion,sexo;
+            int celular;
+            nombre=txtNombre.getText().toString();
+            apellido=txtApellido.getText().toString();
+            cedula=txtCedula.getText().toString();
+            direccion=txtDireccion.getText().toString();
+            celular=Integer.parseInt(txtCelular.getText().toString());
+            sexo=obtenerSexo(txtHombre,txtMujer);
+            id=Datos.getId();
+            Persona p = new Persona(id,cedula,nombre,apellido,sexo,celular,direccion);
+            p.guardar();
+            Snackbar.make(view, getResources().getString(R.string.guardado),Snackbar.LENGTH_SHORT).setAction("Action",null).show();
+            limpiar();
+        }
+
+
+
     }
 
     public void limpiar(View v){
@@ -61,6 +80,9 @@ public class CrearPersona extends AppCompatActivity {
     public void limpiar(){
         txtApellido.setText("");
         txtNombre.setText("");
+        txtCelular.setText("");
+        txtCedula.setText("");
+        txtDireccion.setText("");
 
     }
 }

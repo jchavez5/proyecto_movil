@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProyectoSeguros</string>
+    <string name="app_name">Seguros</string>
     <string name="title_activity_lista_usuarios">ListaUsuarios</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
@@ -42,4 +42,6 @@
     <string name="consultar_poliza">Ver todas las polizas creadas</string>
     <string name="title_activity_lista_poliza">ListaPoliza</string>
     <string name="title_activity_lista_poliza_xpersona">ListaPolizaXPersona</string>
+    <string name="tituloCrearPersona">CREAR USUARIOS.</string>
+    <string name="error">No pueden quedar campos vacios</string>
 </resources>

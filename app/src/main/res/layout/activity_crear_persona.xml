@@ -6,92 +6,128 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.josechavez.proyectoseguros.CrearPersona">
+    tools:context="com.example.josechavez.proyectoseguros.CrearPersona"
+    android:padding="15dp"
+    >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nombre" />
+            android:text="@string/tituloCrearPersona"
 
-    <EditText
-        android:id="@+id/txtNombre"
+            android:textAlignment="center"
+            android:textColor="@color/editTextColorBlack"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-         />
+        >
 
-    <TextView
-        android:id="@+id/textView2"
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre"
+            android:textColor="@color/editTextColorBlack"
+            android:textSize="24sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/apellido" />
+        >
 
-    <EditText
-        android:id="@+id/txtApellido"
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/apellido"
+            android:textSize="24sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        />
+        >
 
-    <TextView
-        android:id="@+id/textView3"
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtCedula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cedula"
+            android:inputType="number"
+            android:textSize="24sp" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cedula" />
+        >
 
-    <EditText
-        android:id="@+id/txtCedula"
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtCelular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/telefono"
+            android:textSize="24sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        />
+        >
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/telefono" />
-
-    <EditText
-        android:id="@+id/txtCelular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-       />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/direccion" />
-
-    <EditText
-        android:id="@+id/txtDireccion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-       />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/direccion"
+            android:textSize="24sp" />
+    </android.support.design.widget.TextInputLayout>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sexo" />
+        android:text="@string/sexo"
+        android:textColor="@color/editTextColorBlack"
+        android:textSize="24sp" />
 
-    <Spinner
-        android:id="@+id/sp_sexo"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/hombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hombre"
+            android:textSize="24sp"
+
+            />
+
+        <RadioButton
+            android:id="@+id/mujer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mujer"
+            android:textSize="24sp"
+            />
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="guardar"
-        android:text="@string/agregar" />
+        android:text="@string/agregar"
+        android:theme="@style/button"
+
+        />
 </LinearLayout>

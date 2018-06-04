@@ -7,7 +7,23 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="EditTextBlack" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/editTextColorBlack</item>
+        <item name="android:textColorPrimary">@color/editTextColorBlack</item>
+        <item name="android:colorAccent">@color/editTextColorBlack</item>
+        <item name="android:colorControlNormal">@color/editTextColorBlack</item>
+        <item name="android:colorControlActivated">@color/editTextColorBlack</item>
+        <item name="android:textSize">@dimen/tamaño</item>
 
+    </style>
+    <style name="button" parent="Theme.AppCompat.Light">
+        <item name="android:colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="android:textColorHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@color/editTextColorWhite</item>
+        <item name="android:textSize">@dimen/tamaño</item>
+
+
+    </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -16,5 +32,6 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>
