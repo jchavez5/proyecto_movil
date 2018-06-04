@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -14,7 +15,10 @@ import java.util.ArrayList;
 
 public class CrearPersona extends AppCompatActivity {
     private EditText txtNombre,txtApellido,txtCedula,txtCelular,txtDireccion;
-    private RadioButton txtHombre,txtMujer;
+    private RadioGroup  op;
+    private Spinner spn_sexo;
+    private String [] opc_sexo;
+    private ArrayAdapter<String> adp_sexo;
 
 
     @Override
@@ -26,22 +30,33 @@ public class CrearPersona extends AppCompatActivity {
         txtCedula=findViewById(R.id.txtCedula);
         txtCelular=findViewById(R.id.txtCelular);
         txtDireccion=findViewById(R.id.txtDireccion);
-        txtHombre=findViewById(R.id.hombre);
-        txtMujer=findViewById(R.id.mujer);
+        //Spinner de sexo
+        spn_sexo = findViewById(R.id.lst_Sexo);
+        opc_sexo = this.getResources().getStringArray(R.array.lista_sexo);
+        adp_sexo = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,opc_sexo);
+        spn_sexo.setAdapter(adp_sexo);
 
 
     }
-
-    public String obtenerSexo(RadioButton hombre,RadioButton mujer){
+    public String obtenerSexoSpinner(Spinner spinner){
         String cadena="";
-        if (txtHombre.isChecked()){
-            cadena=hombre.getText().toString();
-        }
-        if (txtMujer.isChecked()){
-            cadena=mujer.getText().toString();
-        }
-        return cadena;
+        cadena=spinner.getSelectedItem().toString();
+        //Toast.makeText(this,cadena,Toast.LENGTH_LONG).show();
+        return  cadena;
     }
+    public int ColocarFoto(Spinner spinner){
+        int foto=0;
+        int posicion=spinner.getSelectedItemPosition();
+        if (posicion==0){
+            foto=R.drawable.hombre;
+        }
+        if (posicion==1){
+            foto=R.drawable.mujer;
+        }
+
+        return foto;
+    }
+
     public boolean  validacion(EditText[] editTexts,String error){
         for (int i = 0; i < editTexts.length; i++) {
             if (editTexts[i].getText().toString().equals("")){
@@ -52,18 +67,22 @@ public class CrearPersona extends AppCompatActivity {
         return true;
     }
 
+
+
     public void guardar(View view){
         if (validacion(new EditText[]{txtNombre,txtApellido,txtCedula,txtCelular,txtDireccion},getResources().getString(R.string.error))){
             String nombre,apellido,id,cedula,direccion,sexo;
-            int celular;
+            int celular,foto;
+
             nombre=txtNombre.getText().toString();
             apellido=txtApellido.getText().toString();
             cedula=txtCedula.getText().toString();
             direccion=txtDireccion.getText().toString();
             celular=Integer.parseInt(txtCelular.getText().toString());
-            sexo=obtenerSexo(txtHombre,txtMujer);
+            sexo=obtenerSexoSpinner(spn_sexo);
+            foto=ColocarFoto(spn_sexo);
             id=Datos.getId();
-            Persona p = new Persona(id,cedula,nombre,apellido,sexo,celular,direccion);
+            Persona p = new Persona(id,cedula,nombre,apellido,sexo,celular,direccion,foto);
             p.guardar();
             Snackbar.make(view, getResources().getString(R.string.guardado),Snackbar.LENGTH_SHORT).setAction("Action",null).show();
             limpiar();

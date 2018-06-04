@@ -34,6 +34,7 @@ public AdaptadorPersona(ArrayList<Persona> personas, OnPersonaClickListener clic
         final Persona p = personas.get(position);
         holder.nombre.setText(p.getNombre());
         holder.apeliido.setText(p.getApellido());
+        holder.foto.setImageResource(p.getFoto());
 
 
         holder.v.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +58,7 @@ public AdaptadorPersona(ArrayList<Persona> personas, OnPersonaClickListener clic
         public PersonaViewHolder(View itemView){
             super(itemView);
             v = itemView;
-            //foto = v.findViewById(R.id.imgFoto);
+            foto = v.findViewById(R.id.imgFoto);
             nombre=v.findViewById(R.id.lblNombre);
             apeliido=v.findViewById(R.id.lblApellido);
 

@@ -14,12 +14,9 @@ public class Persona {
     private String sexo;
     private int telefono;
     private String direccion;
+    private int foto;
 
-
-    public Persona() {
-    }
-
-    public Persona(String id, String cedula, String nombre, String apellido, String sexo, int telefono, String direccion) {
+    public Persona(String id, String cedula, String nombre, String apellido, String sexo, int telefono, String direccion, int foto) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -27,7 +24,13 @@ public class Persona {
         this.sexo = sexo;
         this.telefono = telefono;
         this.direccion = direccion;
+        this.foto = foto;
     }
+
+    public Persona() {
+    }
+
+
 
     public String getId() {
         return id;
@@ -83,6 +86,14 @@ public class Persona {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
     }
 
     public void guardar(){
