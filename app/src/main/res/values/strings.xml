@@ -35,7 +35,7 @@
     <string name="id_persona">ID_persona</string>
     <string name="nombre_poliza">Nombre persona: </string>
     <string name="lista_usuario">Crear poliza por lista de usuarios</string>
-    <string name="title_activity_consultar_polizas">ConsultarPolizas</string>
+    <string name="title_activity_consultar_polizas">Consultar polizas por los usuarios</string>
     <string name="consultar">Consultar Polizas por usuarios</string>
     <string name="title_activity_consultar_poliza_persona">ConsultarPolizaPersona</string>
     <string name="title_activity_consultar_poliza_xpersona">ConsultarPolizaXPersona</string>
@@ -48,4 +48,6 @@
     <string name="cedula_poliza">Cedula persona:</string>
     <string name="fecha">></string>
     <string name="valor">Costo de la poliza</string>
+    <string name="nombreCm">Nombre completo</string>
+    <string name="valordePoliza">Valor neto de sus polizas</string>
 </resources>

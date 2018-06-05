@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ListaPoliza extends AppCompatActivity implements AdaptadorPoliza.OnPolizaClickListener {
+public class   ListaPoliza extends AppCompatActivity implements AdaptadorPoliza.OnPolizaClickListener {
     private RecyclerView ListaPoliza;
     private ArrayList<Poliza> polizas;
     private Intent i;

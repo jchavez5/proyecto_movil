@@ -89,4 +89,10 @@ public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona
 
 
     }
+    public void crearPersona(View v){
+        i = new Intent(ListaUsuarios.this,CrearPersona  .class);
+        startActivity(i);
+
+
+    }
 }

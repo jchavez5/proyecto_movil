@@ -51,6 +51,7 @@ public class  ConsultarPolizas extends AppCompatActivity implements AdaptadorCon
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Persona p = snapshot.getValue(Persona.class);
                         personas.add(p);
+
                     }
                 }
                 adapter.notifyDataSetChanged();

@@ -7,7 +7,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Josechavez on 03/06/2018.
@@ -16,6 +23,7 @@ import java.util.ArrayList;
 public class AdaptadorConsulta extends RecyclerView.Adapter<AdaptadorConsulta.ConsultaViewHolder> {
     private ArrayList<Persona> personas;
     private AdaptadorConsulta.OnConsultaClickListener clickListener;
+
     public AdaptadorConsulta(ArrayList<Persona> personas, AdaptadorConsulta.OnConsultaClickListener clickListener) {
         this.personas = personas;
         this.clickListener = clickListener;
@@ -30,10 +38,16 @@ public class AdaptadorConsulta extends RecyclerView.Adapter<AdaptadorConsulta.Co
     }
 
     @Override
-    public void onBindViewHolder(AdaptadorConsulta.ConsultaViewHolder holder, int position) {
+    public void onBindViewHolder(final AdaptadorConsulta.ConsultaViewHolder holder, final int position) {
         final Persona p = personas.get(position);
-        holder.nombre.setText(p.getNombre());
-        holder.apeliido.setText(p.getApellido());
+
+        holder.nombreCompleto.setText(p.getNombre() + " " + p.getApellido());
+        holder.cedula.setText(p.getCedula());
+        holder.id.setText(p.getId());
+
+
+
+
 
 
         holder.v.setOnClickListener(new View.OnClickListener() {
@@ -49,15 +63,18 @@ public class AdaptadorConsulta extends RecyclerView.Adapter<AdaptadorConsulta.Co
     }
 
     public static class ConsultaViewHolder extends RecyclerView.ViewHolder{
-        private TextView nombre;
-        private TextView apeliido;
+        private TextView nombreCompleto,valor,cedula,id;
         private View v;
 
         public ConsultaViewHolder(View itemView){
             super(itemView);
             v = itemView;
-            nombre=v.findViewById(R.id.lblNombre);
-            apeliido=v.findViewById(R.id.lblApellido);
+            cedula=v.findViewById(R.id.lblCedula);
+            nombreCompleto=v.findViewById(R.id.lblNombre);
+            valor=v.findViewById(R.id.lblValor);
+            id=v.findViewById(R.id.id);
+
+
 
 
 
