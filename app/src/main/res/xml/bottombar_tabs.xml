@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<tabs>
+    <tab
+        id="@+id/tab_calculo"
+        title="@string/tab_calculo"
+        />
+    <tab
+        id="@+id/tab_home"
+        title="@string/tab_home"
+        />
+    <tab
+        id="@+id/tab_proflile"
+        title="@string/tab_seguro"
+        />
+
+
+
+</tabs>

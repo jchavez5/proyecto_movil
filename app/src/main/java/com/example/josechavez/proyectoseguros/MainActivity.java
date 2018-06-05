@@ -1,6 +1,8 @@
 package com.example.josechavez.proyectoseguros;
 
 import android.content.Intent;
+import android.support.annotation.IdRes;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.josechavez.proyectoseguros.fragment.FragmentCalculo;
+import com.example.josechavez.proyectoseguros.fragment.FragmentHome;
+import com.example.josechavez.proyectoseguros.fragment.FragmentProfile;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
+
+public class MainActivity extends AppCompatActivity{
     private ListView lvPrincipal;
     private String [] opc_Principal;
     private Intent in_principal;
@@ -31,9 +39,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ListViewAdapter(this,titulos, imagenes);
         lista.setAdapter(adapter);
 
-        //opc_Principal = getResources().getStringArray(R.array.op_lista_principal);
-        //ArrayAdapter<String> adpPrincipal = new ArrayAdapter(this,android.R.layout.simple_list_item_1,opc_Principal);
-        //lvPrincipal.setAdapter(adpPrincipal);
+
         lvPrincipal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -59,5 +65,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
     }
+
+
+
+
 }

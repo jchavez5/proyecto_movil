@@ -63,4 +63,22 @@
     <string name="negativo">NO</string>
     <string name="modificar">Modificar</string>
     <string name="pregunta_modificar">Quiere modicar?</string>
+    <string name="title_activity_home">Home</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_principal">principal</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab_calculo">Calculos</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_seguro">Seguros</string>
+    <string name="title_activity_seguros">Seguros</string>
+    <string name="irSeguro">Ir a la nomina de los seguros</string>
+    <string name="irSeguros">Ir a los seguros</string>
+    <string name="Desc">Una agencia de seguros es una empresa vinculada por un contrato de agencia a una entidad aseguradora, encargada de captar nuevos asegurados para que suscriban los seguros de la compañía (tomadores de seguros) y/o dar asesoramiento a su cartera de clientes.</string>
+    <string name="home">Este es el Home</string>
 </resources>
