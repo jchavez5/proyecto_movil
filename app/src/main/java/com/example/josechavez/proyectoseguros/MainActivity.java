@@ -12,15 +12,41 @@ public class MainActivity extends AppCompatActivity {
     private ListView lvPrincipal;
     private String [] opc_Principal;
     private Intent in_principal;
+    private ListViewAdapter adapter;
+
+    int[] imagenes = {
+            R.drawable.imagen1,
+            R.drawable.imagen2,
+            R.drawable.imagen3,
+            R.drawable.imagen4
+
+    };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lvPrincipal = findViewById(R.id.lvPrincipal);
-        opc_Principal = getResources().getStringArray(R.array.op_lista_principal);
-        ArrayAdapter<String> adpPrincipal = new ArrayAdapter(this,android.R.layout.simple_list_item_1,opc_Principal);
-        lvPrincipal.setAdapter(adpPrincipal);
+
+        final ListView lista = findViewById(R.id.lvPrincipal);
+        String crearE = getResources().getString(R.string.tituloCrearPersona);
+        String crearE2 = getResources().getString(R.string.lista_usuario);
+        String crearE3 = getResources().getString(R.string.title_activity_consultar_poliza_xpersona);
+        String crearE4 = getResources().getString(R.string.consultar_poliza);
+
+        String[] titulos = new String[]{crearE,crearE2,crearE3,crearE4    };
+
+        adapter = new ListViewAdapter(this,titulos, imagenes);
+        lista.setAdapter(adapter);
+
+
+
+
+        //opc_Principal = getResources().getStringArray(R.array.op_lista_principal);
+        //ArrayAdapter<String> adpPrincipal = new ArrayAdapter(this,android.R.layout.simple_list_item_1,opc_Principal);
+        //lvPrincipal.setAdapter(adpPrincipal);
         lvPrincipal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

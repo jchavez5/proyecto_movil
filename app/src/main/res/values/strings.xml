@@ -41,7 +41,7 @@
     <string name="title_activity_consultar_poliza_xpersona">ConsultarPolizaXPersona</string>
     <string name="consultar_poliza">Ver todas las polizas creadas</string>
     <string name="title_activity_lista_poliza">ListaPoliza</string>
-    <string name="title_activity_lista_poliza_xpersona">ListaPolizaXPersona</string>
+    <string name="title_activity_lista_poliza_xpersona">Polizas</string>
     <string name="tituloCrearPersona">CREAR USUARIOS.</string>
     <string name="error">No pueden quedar campos vacios</string>
     <string name="tituloMostrarListaUsuarios">Lista de usuarios en la nomina</string>
@@ -50,4 +50,8 @@
     <string name="valor">Costo de la poliza</string>
     <string name="nombreCm">Nombre completo</string>
     <string name="valordePoliza">Valor neto de sus polizas</string>
+    <string name="moto">Moto</string>
+    <string name="carro">Carro</string>
+    <string name="error2">Error de tipo de poliza</string>
+    <string name="tipo">Tipo de poliza</string>
 </resources>

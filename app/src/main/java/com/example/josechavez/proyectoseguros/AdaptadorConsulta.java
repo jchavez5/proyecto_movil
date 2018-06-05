@@ -71,7 +71,6 @@ public class AdaptadorConsulta extends RecyclerView.Adapter<AdaptadorConsulta.Co
             v = itemView;
             cedula=v.findViewById(R.id.lblCedula);
             nombreCompleto=v.findViewById(R.id.lblNombre);
-            valor=v.findViewById(R.id.lblValor);
             id=v.findViewById(R.id.id);
 
 

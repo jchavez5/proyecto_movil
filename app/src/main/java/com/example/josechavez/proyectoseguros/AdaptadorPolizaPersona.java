@@ -34,7 +34,7 @@ public class AdaptadorPolizaPersona extends RecyclerView.Adapter<AdaptadorPoliza
     @Override
     public void onBindViewHolder(AdaptadorPolizaPersona.PolizaPersonaViewHolder holder, int position) {
         final Poliza p = polizas.get(position);
-        holder.npoliza.setText(p.getNplaca());
+        holder.npoliza.setText(p.getNpoliza());
         holder.nplaca.setText(p.getNplaca());
 
 

@@ -31,8 +31,11 @@ public class  AdaptadorPoliza extends RecyclerView.Adapter<AdaptadorPoliza.Poliz
     @Override
     public void onBindViewHolder(AdaptadorPoliza.PolizaViewHolder holder, int position) {
         final Poliza p = polizas.get(position);
-        holder.npoliza.setText(p.getNplaca());
+        holder.npoliza.setText(p.getNpoliza());
         holder.nplaca.setText(p.getNplaca());
+        holder.fechai.setText(p.getFechainicio());
+        holder.fechaf.setText(p.getFechafinal());
+        holder.valor.setText(p.getValor_poliza());
 
 
         holder.v.setOnClickListener(new View.OnClickListener() {
@@ -50,13 +53,19 @@ public class  AdaptadorPoliza extends RecyclerView.Adapter<AdaptadorPoliza.Poliz
     public static class PolizaViewHolder extends RecyclerView.ViewHolder{
         private TextView npoliza;
         private TextView nplaca;
+        private TextView fechai;
+        private TextView fechaf;
+        private TextView valor;
         private View v;
 
         public PolizaViewHolder(View itemView){
             super(itemView);
             v = itemView;
-            npoliza=v.findViewById(R.id.lblNpoliza);
-            nplaca=v.findViewById(R.id.lblNplaca);
+            npoliza=v.findViewById(R.id.txtPoliza);
+            nplaca=v.findViewById(R.id.txtPlaca);
+            fechai=v.findViewById(R.id.txtFechai);
+            fechaf=v.findViewById(R.id.txtFechaf);
+            valor=v.findViewById(R.id.txtValor);
 
 
 

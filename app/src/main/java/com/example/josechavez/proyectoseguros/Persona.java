@@ -12,7 +12,7 @@ public class Persona {
     private String nombre;
     private String apellido;
     private String sexo;
-    private int telefono;
+    private String telefono;
     private String direccion;
     private int foto;
 
@@ -20,7 +20,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String id, String cedula, String nombre, String apellido, String sexo, int telefono, String direccion, int foto) {
+    public Persona(String id, String cedula, String nombre, String apellido, String sexo, String telefono, String direccion, int foto) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -72,11 +72,11 @@ public class Persona {
         this.sexo = sexo;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ListaUsuarios extends AppCompatActivity implements AdaptadorPersona.OnPersonaClickListener{
+public class  ListaUsuarios extends AppCompatActivity implements AdaptadorPersona.OnPersonaClickListener{
     private RecyclerView ListaPersona;
     private ArrayList<Persona> personas;
     private Intent i;
