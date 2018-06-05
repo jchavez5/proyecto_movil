@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.josechavez.proyectoseguros.MainActivity;
 import com.example.josechavez.proyectoseguros.R;
@@ -26,20 +25,14 @@ public class FragmentProfile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_fragment_profile,
-                container, false);
-        Button button =  rootView.findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateDetail();
-            }
-        });
-        return rootView;
+        // Inflate the layout for this fragment
+
+        // Inicializas el Intent
+
+        Intent intent = new Intent(getActivity().getApplication(), MainActivity.class);
+        startActivity(intent);
+        return inflater.inflate(R.layout.fragment_fragment_profile , container, false);
     }
 
-    public void updateDetail() {
-        Intent intent = new Intent(getActivity(), MainActivity.class);
-        startActivity(intent);
-    }
+
 }

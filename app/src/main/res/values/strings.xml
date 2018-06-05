@@ -81,4 +81,26 @@
     <string name="irSeguros">Ir a los seguros</string>
     <string name="Desc">Una agencia de seguros es una empresa vinculada por un contrato de agencia a una entidad aseguradora, encargada de captar nuevos asegurados para que suscriban los seguros de la compañía (tomadores de seguros) y/o dar asesoramiento a su cartera de clientes.</string>
     <string name="home">Este es el Home</string>
+    <string name="simulacion">Simulación Pólizas</string>
+    <string name="combustible">Tipo de Combustible</string>
+    <string name="pago">Tipo de Pago</string>
+    <string name="boton">Consultar</string>
+    <string name="combustible_acpm">Acpm</string>
+    <string name="combustible_gasolina">Gasolina</string>
+    <string name="pago_credito">Crédito</string>
+    <string name="pago_efectivo">Efectivo</string>
+    <string name="usd">USD</string>
+    <string name="col">COL</string>
+    <string name="opalta">Gama Baja</string>
+    <string name="opmedia">Gama Media</string>
+    <string name="opbaja">Gama Alta</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="gama">Tipo de Gama</string>
+    <string-array name="tipo_array">
+        <item>@string/opbaja</item>
+        <item>@string/opmedia</item>
+        <item>@string/opalta</item>
+    </string-array>
+    <string name="error_vacio">Digite un Número</string>
+    <string name="error_mayorcero">Digite NÚmero mayor a cero</string>
 </resources>

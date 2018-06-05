@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:layout_editor_absoluteX="8dp"
+tools:layout_editor_absoluteY="8dp"
+tools:context="com.example.josechavez.proyectoseguros.CalculoSimulacion">
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/simulacion"
+    android:textAlignment="center"
+    android:textColor="@android:color/holo_red_dark"
+    android:textSize="30sp" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/cantidad"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtcantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="number" />
+</LinearLayout>
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:text="@string/combustible"
+    android:textAlignment="center"
+    android:textAllCaps="false"
+    android:textSize="24sp"
+    android:textStyle="bold" />
+
+<RadioGroup
+    android:id="@+id/Radio1"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+    android:visibility="visible">
+
+    <RadioButton
+        android:id="@+id/Radiob1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:checked="true"
+        android:text="@string/combustible_acpm" />
+
+    <RadioButton
+        android:id="@+id/Radiob2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/combustible_gasolina" />
+</RadioGroup>
+
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:text="@string/pago"
+    android:textAlignment="center"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:visibility="visible" />
+
+<RadioGroup
+    android:id="@+id/Radio2"
+    android:layout_width="match_parent"
+    android:layout_height="72dp">
+
+    <RadioButton
+        android:id="@+id/Radiob3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:checked="true"
+        android:text="@string/pago_credito" />
+
+    <RadioButton
+        android:id="@+id/rb4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/pago_efectivo" />
+</RadioGroup>
+
+<TextView
+    android:id="@+id/textView4"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:text="@string/gama"
+    android:textAlignment="center"
+    android:textSize="24sp"
+    android:textStyle="bold" />
+
+<Spinner
+    android:id="@+id/spinnerGamma"
+    android:layout_width="match_parent"
+    android:layout_height="41dp"
+    android:dropDownWidth="match_parent"
+    android:entries="@array/tipo_array" />/>
+
+<Button
+    android:id="@+id/button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="mostrar"
+    android:text="@string/boton"
+    android:textStyle="bold" />
+
+<EditText
+    android:id="@+id/txtprecio"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="numberDecimal"
+    android:textAlignment="center"
+    android:textColor="@android:color/holo_red_dark"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:theme="@style/button"/>
+
+</LinearLayout>

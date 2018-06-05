@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.josechavez.proyectoseguros.fragment.FragmentCalculo;
@@ -34,10 +35,12 @@ public class principal extends AppCompatActivity {
                             .addToBackStack(null).commit();
                 }
                 if (tabId==R.id.tab_calculo){
-                    FragmentCalculo calculoFragment=new FragmentCalculo();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.contentContainer,calculoFragment)
+                    FragmentCalculo calculo=new FragmentCalculo();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentContainer,calculo)
                             .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
-                            .addToBackStack(null).commit();}
+                            .addToBackStack(null).commit();
+                    Log.i("entro","entro");}
+
                 if (tabId==R.id.tab_proflile){
 
                         FragmentProfile profileFragment=new FragmentProfile();

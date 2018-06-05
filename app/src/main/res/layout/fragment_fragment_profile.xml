@@ -5,33 +5,6 @@
     android:orientation="horizontal"
     tools:context="com.example.josechavez.proyectoseguros.fragment.FragmentProfile">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Desc"
-            android:textColor="@color/editTextColorBlack"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/irSeguros"
-            android:textAlignment="center"
-            android:theme="@style/button"/>
-
-    </LinearLayout>
-
-
-
 </FrameLayout>
 
 
