@@ -11,5 +11,5 @@
     tools:context="com.example.josechavez.proyectoseguros.ListaPolizaXPersona"
     tools:showIn="@layout/activity_lista_poliza_xpersona"
     android:id="@+id/ListaPolizaXpersona"
-
+    android:background="@color/colorPrimary"
     />

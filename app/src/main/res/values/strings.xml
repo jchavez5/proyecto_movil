@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Seguros</string>
-    <string name="title_activity_lista_usuarios">Lista Usuarios en la nomina</string>
+    <string name="title_activity_lista_usuarios">Crear seguro</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="cedula">Cedula</string>
@@ -40,11 +40,11 @@
     <string name="title_activity_consultar_poliza_persona">ConsultarPolizaPersona</string>
     <string name="title_activity_consultar_poliza_xpersona">ConsultarPolizaXPersona</string>
     <string name="consultar_poliza">Ver todas las polizas creadas</string>
-    <string name="title_activity_lista_poliza">ListaPoliza</string>
-    <string name="title_activity_lista_poliza_xpersona">Polizas</string>
+    <string name="title_activity_lista_poliza">Lista de las polizas</string>
+    <string name="title_activity_lista_poliza_xpersona">Polizas de este usuario</string>
     <string name="tituloCrearPersona">CREAR USUARIOS.</string>
     <string name="error">No pueden quedar campos vacios</string>
-    <string name="tituloMostrarListaUsuarios">Lista de usuarios en la nomina</string>
+    <string name="tituloMostrarListaUsuarios">Crear seguro</string>
     <string name="cedula_poliza">Cedula persona:</string>
     <string name="fecha">></string>
     <string name="valor">Costo de la poliza</string>
@@ -54,4 +54,8 @@
     <string name="carro">Carro</string>
     <string name="error2">Error de tipo de poliza</string>
     <string name="tipo">Tipo de poliza</string>
+    <string name="fechalimi">Fechas estipulada de la poliza</string>
+    <string name="informacion">Imformacion de la poliza</string>
+    <string name="informaciondepoliza">Aca podras eliminar la poliza hasta podras modificarla si en un campo te llegaste a equivocar.</string>
+    <string name="eliminar">Eliminar poliza</string>
 </resources>

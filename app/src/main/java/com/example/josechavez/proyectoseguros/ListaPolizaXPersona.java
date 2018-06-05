@@ -62,8 +62,7 @@ public class ListaPolizaXPersona extends AppCompatActivity implements AdaptadorP
                 while (iterator.hasNext()){
                     DataSnapshot snapshot=iterator.next();
                     Poliza p = snapshot.getValue(Poliza.class);
-
-                    if (p.getId_usuario().equals(id_persona)){
+                        if (p.getId_usuario().equals(id_persona)){
                         polizas.add(p);
                     }
                 }
@@ -77,14 +76,13 @@ public class ListaPolizaXPersona extends AppCompatActivity implements AdaptadorP
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+    }
+    public void crearPolizap(View v){
+        i = new Intent(ListaPolizaXPersona.this,ListaUsuarios  .class);
+        startActivity(i);
+
+
     }
 
 

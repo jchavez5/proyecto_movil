@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         lvPrincipal = findViewById(R.id.lvPrincipal);
 
         final ListView lista = findViewById(R.id.lvPrincipal);
-        String crearE = getResources().getString(R.string.tituloCrearPersona);
+        String crearE = getResources().getString(R.string.usuarios);
         String crearE2 = getResources().getString(R.string.lista_usuario);
-        String crearE3 = getResources().getString(R.string.title_activity_consultar_poliza_xpersona);
+        String crearE3 = getResources().getString(R.string.consultar);
         String crearE4 = getResources().getString(R.string.consultar_poliza);
 
         String[] titulos = new String[]{crearE,crearE2,crearE3,crearE4    };

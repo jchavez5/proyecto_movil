@@ -64,16 +64,14 @@ public class  ListaUsuarios extends AppCompatActivity implements AdaptadorPerson
         });
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
 
+    }
+    public void crearPersona(View v){
+        i = new Intent(ListaUsuarios.this,CrearPersona  .class);
+        startActivity(i);
+
+
+    }
     @Override
     public void onPersonaClick(Persona p) {
         Intent i = new Intent(ListaUsuarios.this,CrearPoliza.class);
@@ -89,10 +87,5 @@ public class  ListaUsuarios extends AppCompatActivity implements AdaptadorPerson
 
 
     }
-    public void crearPersona(View v){
-        i = new Intent(ListaUsuarios.this,CrearPersona  .class);
-        startActivity(i);
 
-
-    }
 }

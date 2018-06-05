@@ -26,6 +26,7 @@ public class   ListaPoliza extends AppCompatActivity implements AdaptadorPoliza.
     private AdaptadorPoliza adapter;
     private static String db_poliza = "poliza";
     private DatabaseReference databaseReference;
+    private int valor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,7 @@ public class   ListaPoliza extends AppCompatActivity implements AdaptadorPoliza.
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 polizas.clear();
+
                 if (dataSnapshot.exists()){
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Poliza p = snapshot.getValue(Poliza.class);
@@ -67,21 +69,22 @@ public class   ListaPoliza extends AppCompatActivity implements AdaptadorPoliza.
             }
         });
 
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
+    public void crearpoliza(View v){
+        i = new Intent(ListaPoliza.this,ListaUsuarios  .class);
+        startActivity(i);
 
+
+    }
 
     @Override
     public void onPolizaClick(Poliza p) {
+        Intent i = new Intent(ListaPoliza.this,DetallePoliza.class);
+        Bundle b = new Bundle();
+
+
+        i.putExtra("datos",b);
+        startActivity(i);
 
     }
 }
