@@ -81,6 +81,13 @@ public class   ListaPoliza extends AppCompatActivity implements AdaptadorPoliza.
     public void onPolizaClick(Poliza p) {
         Intent i = new Intent(ListaPoliza.this,DetallePoliza.class);
         Bundle b = new Bundle();
+        b.putString("id",p.getId());
+        b.putString("npoliza",p.getNpoliza());
+        b.putString("nplaca",p.getNplaca());
+        b.putString("fechainicio",p.getFechainicio());
+        b.putString("fechafinal",p.getFechafinal());
+        b.putString("valor_poliza",p.getValor_poliza());
+        b.putString("nombreAsesor",p.getNombreAsesor());
 
 
         i.putExtra("datos",b);

@@ -59,4 +59,10 @@ public class Datos {
     public static void setPoliza(ArrayList<Poliza> poliza){
         Datos.polizas = poliza;
     }
+
+
+    public static void eliminarPoliza(Poliza p) {
+
+        databaseReference.child(db_poliza).child(p.getId()).removeValue();
+    }
 }

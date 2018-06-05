@@ -82,7 +82,7 @@ public class CrearPoliza extends AppCompatActivity implements View.OnClickListen
             fechaI=txtFechaI.getText().toString();
             fechaF=txtFechaF.getText().toString();
             Asesor=txtNombreAsesor.getText().toString();
-            valop=txtNumeroPoliza.getText().toString();
+            valop=txtvalorp.getText().toString();
             id=Datos.getIdPoliza();
             Poliza poliza = new Poliza(id,Npoliza,Placa,fechaI,fechaF,Asesor,idPersona,valop);
             poliza.guardar();

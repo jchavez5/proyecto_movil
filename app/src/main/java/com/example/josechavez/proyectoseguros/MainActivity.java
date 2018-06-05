@@ -13,17 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private String [] opc_Principal;
     private Intent in_principal;
     private ListViewAdapter adapter;
-
-    int[] imagenes = {
-            R.drawable.imagen1,
-            R.drawable.imagen2,
-            R.drawable.imagen3,
-            R.drawable.imagen4
-
-    };
-
-
-
+    int[] imagenes = {R.drawable.imagen1,R.drawable.imagen2,R.drawable.imagen3,R.drawable.imagen4};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new ListViewAdapter(this,titulos, imagenes);
         lista.setAdapter(adapter);
-
-
-
 
         //opc_Principal = getResources().getStringArray(R.array.op_lista_principal);
         //ArrayAdapter<String> adpPrincipal = new ArrayAdapter(this,android.R.layout.simple_list_item_1,opc_Principal);
@@ -68,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
                         in_principal= new Intent(MainActivity.this,ListaPoliza.class);
                         startActivity(in_principal);
                         break;
-
-
-
 
                 }
             }

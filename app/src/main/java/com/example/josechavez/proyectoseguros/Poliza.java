@@ -17,6 +17,10 @@ public class Poliza {
     public Poliza() {
     }
 
+    public Poliza(String id) {
+        this.id = id;
+    }
+
     public Poliza(String id, String npoliza, String nplaca, String fechainicio, String fechafinal, String nombreAsesor, String id_usuario, String valor_poliza) {
         this.id = id;
         this.npoliza = npoliza;
@@ -94,4 +98,9 @@ public class Poliza {
     public void guardar(){
         Datos.guardarPoliza(this);
     }
+
+    public void eliminar(){
+        Datos.eliminarPoliza(this);
+    }
+
 }

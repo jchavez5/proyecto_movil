@@ -56,6 +56,11 @@
     <string name="tipo">Tipo de poliza</string>
     <string name="fechalimi">Fechas estipulada de la poliza</string>
     <string name="informacion">Imformacion de la poliza</string>
-    <string name="informaciondepoliza">Aca podras eliminar la poliza hasta podras modificarla si en un campo te llegaste a equivocar.</string>
+    <string name="informaciondepoliza">Aca podras eliminar la poliza .</string>
     <string name="eliminar">Eliminar poliza</string>
+    <string name="pregunta_eliminacion">Desea eliminar los datos de esta poliza?</string>
+    <string name="positivo">SI</string>
+    <string name="negativo">NO</string>
+    <string name="modificar">Modificar</string>
+    <string name="pregunta_modificar">Quiere modicar?</string>
 </resources>
