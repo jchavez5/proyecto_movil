@@ -103,4 +103,6 @@
     </string-array>
     <string name="error_vacio">Digite un Número</string>
     <string name="error_mayorcero">Digite NÚmero mayor a cero</string>
+    <string name="inicio">Seguros LTDA.</string>
+    <string name="welcome">Bienvenido.</string>
 </resources>

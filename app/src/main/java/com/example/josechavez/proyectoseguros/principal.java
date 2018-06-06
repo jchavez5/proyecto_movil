@@ -52,6 +52,8 @@ public class principal extends AppCompatActivity {
         });
 
     }
-
+    public void onBackPressed() {
+        finish();
+    }
 }
 
